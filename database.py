@@ -4,12 +4,12 @@
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase, AsyncIOMotorCollection
 from pymongo.cursor import  Cursor
 
-from models.models import PyObjectId, Task
+from models.models import Task
 from bson.objectid import ObjectId
 import bson
+from decouple import config
 
-
-client:AsyncIOMotorClient = AsyncIOMotorClient("mongodb://localhost:27017")
+client:AsyncIOMotorClient = AsyncIOMotorClient(config("MONGO_URL"))
 database:AsyncIOMotorDatabase = client.taskdatabase
 collection:AsyncIOMotorCollection = database.tasks
 
