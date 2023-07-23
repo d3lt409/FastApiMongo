@@ -18,7 +18,6 @@ packaging
 pathspec
 platformdirs
 pycodestyle
-pydantic-core
 pydantic
 pyflakes
 pymongo
