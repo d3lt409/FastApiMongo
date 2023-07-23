@@ -2,9 +2,11 @@ from fastapi import APIRouter, HTTPException
 from database import get_task_id, get_all_tasks, create_new_task, get_task_title, delete_task_id, update_task_id
 from models.models import Task, UpdateTask
 
+from typing import List
+
 task = APIRouter()
 
-@task.get("/api/v1/tasks", response_model=list[Task])
+@task.get("/api/v1/tasks", response_model=List[Task])
 async def get_tasks() -> Task:
     tasks = await get_all_tasks()
     return tasks
