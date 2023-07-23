@@ -14,7 +14,7 @@ idna
 mccabe
 motor
 mypy-extensions
-packaging=
+packaging
 pathspec
 platformdirs
 pycodestyle
